@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+service EmployeeInfoService {
+  rpc EmployeeInfo(EmployeeInfoRequest) returns (EmployeeInfoResponse) {}
+}
+
+message EmployeeInfoRequest {
+  required    int64   id = 1;
+  required    string  name = 2;
+  repeated    string  phone_numbers = 4;
+  optional    string  occupation = 5;
+              bool    is_working_professional = 3;
+}
+
+message EmployeeInfoResponse {
+  int64             response_code = 1;
+  string            message = 2;
+  optional  string  err = 3;
+}
